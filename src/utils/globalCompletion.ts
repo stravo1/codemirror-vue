@@ -1,5 +1,4 @@
 import { syntaxTree } from '@codemirror/language';
-import { CompletionContext } from '@codemirror/autocomplete';
 
 function getAllProperties(obj:Object) {
   const props = new Set();
@@ -32,7 +31,7 @@ const dontCompleteIn = [
   'PropertyDefinition',
 ];
 
-export default function completeFromGlobalScope(context: any) {
+export default function jsCompletionsFromGlobalScope(context: any) {
   let nodeBefore = syntaxTree(context.state).resolveInner(context.pos, -1);
 
   console.log({nodeBefore})

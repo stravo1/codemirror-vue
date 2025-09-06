@@ -10,7 +10,7 @@ import {
   closeBrackets,
 } from "@codemirror/autocomplete";
 import { oneDark } from "@codemirror/theme-one-dark";
-import completeFromGlobalScope from "../utils/globalCompletion";
+import jsCompletionsFromGlobalScope from "../utils/globalCompletion";
 import customPythonCompletions from "../utils/pythonCustomCompletion";
 
 import { python, pythonLanguage } from "@codemirror/lang-python";
@@ -76,7 +76,7 @@ const createStartingState = async () => {
           typescript: false,
         }),
         javascriptLanguage.data.of({
-          autocomplete: completeFromGlobalScope,
+          autocomplete: jsCompletionsFromGlobalScope,
         }),
       );
       break;
